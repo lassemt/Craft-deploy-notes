@@ -25,3 +25,16 @@ location ^~ /.well-known/acme-challenge/ {
 }
 ```
 after "Don't serve hidden files." rule in NGINX config. 
+
+##### Problems with reverse DNS (PTR)
+Problem occured when sending mails using postfix. Reverse DNS is fixed by using the a fully qualified domain name(FQDN) as hostname for droplets. To fix this you just have to click the droplet name in the control panel and change it to the relevant FQDN.
+
+#####  Wrong hostname in postfix
+Emails sent from the server had the wrong hostname (some "domain.default-fqdn.com" host. To solve this shh into root and do following: 
+```sh
+$ cd /etc/postfix
+$ vim main.cf
+```
+Look for `myhostname = some-random-bs-hostname` and `smtp_helo_name = $myhostname.default-fqdn.com`. Change these to your relevant hostname eg. `myhostname = domain.com` and `smtp_helo_name = $myhostname`
+
+I found my answer [in this article.](https://adigital.agency/blog/migrating-to-digital-ocean-sink-or-swim)

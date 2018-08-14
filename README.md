@@ -26,6 +26,8 @@ location ^~ /.well-known/acme-challenge/ {
 ```
 after "Don't serve hidden files." rule in NGINX config. 
 
+### Potential errors with sending emails from server.
+
 ##### Problems with reverse DNS (PTR)
 Problem occured when sending mails using postfix. Reverse DNS is fixed by using the a fully qualified domain name(FQDN) as hostname for droplets. To fix this you just have to click the droplet name in the control panel and change it to the relevant FQDN.
 

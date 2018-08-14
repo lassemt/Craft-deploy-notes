@@ -39,4 +39,6 @@ $ vim main.cf
 ```
 Look for `myhostname = some-random-bs-hostname` and `smtp_helo_name = $myhostname.default-fqdn.com`. Change these to your relevant hostname eg. `myhostname = domain.com` and `smtp_helo_name = $myhostname`
 
+Don't forget to restart the postfix service: `sudo service postfix restart`.
+
 I found my answer [in this article.](https://adigital.agency/blog/migrating-to-digital-ocean-sink-or-swim)

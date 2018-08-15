@@ -1,5 +1,5 @@
 # Craft-deploy-notes
-Some useful notes and links when deploying craft to a digitalocean droplet with serverpilot.
+Some useful notes and links when deploying craft to a Digital Ocean droplet with serverpilot.
 
 ### General links
 * [Setting up a New Craft CMS 3 Project](https://nystudio107.com/blog/setting-up-a-craft-cms-3-project) - Notice the method of deployment

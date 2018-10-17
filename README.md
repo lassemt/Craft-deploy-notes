@@ -20,7 +20,7 @@ $ sudo service phpX.X-fpm-sp restart
 ##### Serverpilot's AutoSSL don't like custom LEMP stack shown in url ☝️
 Usually this part is the problem because LetsEncrypt usually places a hidden file to validate domain (if the non DNS method is being used). A possible solution (haven't tried yet) will be adding this:  
 ```
-location ^~ /.well-known/acme-challenge/ {
+location ~ /.well-known/acme-challenge/ {
   allow all;
 }
 ```
